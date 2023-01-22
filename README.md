@@ -166,12 +166,12 @@ labels batch shape: (20,)
 对于model.fit_generator中的参数：里面含有上面代码的两个生成器train_generator和validation_generator；训练集样本总数是1360，我们设置的batch_size为20，因此steps_per_epoc取值至多为1360/20=68，我们找了一个比较好看的数64作为steps_per_epoc的值；验证集样本总数为572，因此validation_steps取值为572//20=28。
 参数设置好后的代码如下：
 ~~~
-	history = model.fit_generator(
-	      train_generator,
-	      steps_per_epoch=64,
-	      epochs=10,
-      validation_data=validation_generator,
-	      validation_steps=28)
+		history = model.fit_generator(
+		      train_generator,
+		      steps_per_epoch=64,
+		      epochs=10,
+	      validation_data=validation_generator,
+		      validation_steps=28)
 ~~~
 
 最后我们把模型存储下来，运行一下：
