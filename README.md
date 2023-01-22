@@ -2,11 +2,12 @@
 基于CNN的水果分类
 水果分类任务，本实验使用了最基本的图像二分类技术。
 对于这样一个图像分类任务，我们采用了keras库来辅助进行实验。这是因为Keras中的keras.preprocessing.image有包含ImageDataGenerator类，可以快速创建Python生成器，能够将硬盘上的图像文件自动转换为预处理好的张量，很方便进行图像数据的处理。下面是我们的实验代码和实验结果及其说明。
-首先放上总体的代码和实验结果。（为了便于阅读，之后的代码和结果不采用截图形式。）
-1、实验代码截图：
- 
-2、实验结果截图：
- 
+首先放上总体的代码和实验结果。
+
+
+实验结果截图：
+ ![image](https://user-images.githubusercontent.com/98015436/213906144-a99b5a13-28a2-419c-9b26-abd6e2130a5e.png)
+
 （红色部分是因为我没有安装CUDA，无法使用GPU协助运算，不必理会。）
 
  
@@ -17,6 +18,8 @@
  
 每个部分中又包含苹果和香蕉的图片若干。为了直观的表示每个数据集中包含图片的多少，我们用了课上老师讲的关于文件路径的知识，统计了每个文件夹中的图片个数。代码和结果如下：
 代码：
+
+~~~
 1.	import os
 2.	train_dir='./训练集'
 3.	validation_dir='./验证集'
@@ -38,7 +41,10 @@
 19.	print('total validation banana images:', len(os.listdir(validation_bananas_dir)))
 20.	print('total testing apple images:', len(os.listdir(test_apples_dir)))
 21.	print('total testing banana images:', len(os.listdir(test_bananas_dir)))
+~~~
 结果：
+
+~~~
 C:\Users\K\AppData\Local\Programs\Python\Python39\python.exe E:/实验/实验.py
 total training apple images: 680
 total training banana images: 680
@@ -46,8 +52,11 @@ total validation apple images: 286
 total validation banana images: 286
 total testing apple images: 234
 total testing banana images: 233
+~~~ 
 
 1.2构建网络
+
+~~~
 1.	#构建网络
 2.	from keras import layers
 3.	from keras import models
